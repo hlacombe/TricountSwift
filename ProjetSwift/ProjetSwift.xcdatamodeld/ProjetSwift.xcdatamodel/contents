@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18D109" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Activity" representedClassName="Activity" syncable="YES" codeGenerationType="class">
+        <attribute name="pdate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="pmontantTotal" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="pnom" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="pdepenses" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Depense" inverseName="psourceActivity" inverseEntity="Depense" syncable="YES"/>
+        <relationship name="pvoyage" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Voyage" inverseName="activites" inverseEntity="Voyage" syncable="YES"/>
+    </entity>
+    <entity name="Depense" representedClassName="Depense" syncable="YES" codeGenerationType="class">
+        <attribute name="pmontant" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="pcrediteur" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="credits" inverseEntity="Person" syncable="YES"/>
+        <relationship name="pdebiteur" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="debits" inverseEntity="Person" syncable="YES"/>
+        <relationship name="psourceActivity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Activity" inverseName="pdepenses" inverseEntity="Activity" syncable="YES"/>
+    </entity>
+    <entity name="Person" representedClassName="Person" syncable="YES" codeGenerationType="class">
+        <attribute name="pdateArrivee" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="pdateDepart" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="pfirstname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pimg" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="plastname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="psolde" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="credits" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Depense" inverseName="pcrediteur" inverseEntity="Depense" syncable="YES"/>
+        <relationship name="debits" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Depense" inverseName="pdebiteur" inverseEntity="Depense" syncable="YES"/>
+        <relationship name="voyage" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Voyage" inverseName="newRelationship" inverseEntity="Voyage" syncable="YES"/>
+    </entity>
+    <entity name="Voyage" representedClassName="Voyage" syncable="YES" codeGenerationType="class">
+        <attribute name="pdateArrive" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="pdateDepart" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="pdestination" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pimg" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="pnom" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="activites" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="pvoyage" inverseEntity="Activity" syncable="YES"/>
+        <relationship name="newRelationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Person" inverseName="voyage" inverseEntity="Person" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Activity" positionX="6.47265625" positionY="121.71875" width="128" height="120"/>
+        <element name="Depense" positionX="-88.07421875" positionY="-219.2890625" width="128" height="105"/>
+        <element name="Person" positionX="-309.47265625" positionY="-297.40625" width="128" height="180"/>
+        <element name="Voyage" positionX="-411.11328125" positionY="-1.52734375" width="128" height="150"/>
+    </elements>
+</model>
