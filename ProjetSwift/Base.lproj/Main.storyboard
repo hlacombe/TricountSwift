@@ -430,7 +430,7 @@
                                 <rect key="frame" x="10" y="226" width="394" height="444"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="IJK-5q-9q8">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="IJK-5q-9q8" customClass="DepenseCell" customModule="ProjetSwift" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="394" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="Z" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IJK-5q-9q8" id="Yla-Lw-mxM">
@@ -475,6 +475,12 @@
                                                 <constraint firstItem="SgH-Zc-n1H" firstAttribute="bottom" secondItem="Yla-Lw-mxM" secondAttribute="bottomMargin" id="uPu-Ex-5Ly"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="deleteBTn" destination="MGn-hW-Eek" id="9jj-j3-XA9"/>
+                                            <outlet property="editBtn" destination="EIN-n8-Vny" id="FXx-Df-mYI"/>
+                                            <outlet property="intitule" destination="Kah-nN-b38" id="dAt-or-5BK"/>
+                                            <outlet property="montant" destination="SgH-Zc-n1H" id="oTA-2O-HhO"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -522,8 +528,6 @@
                     <tabBarItem key="tabBarItem" title="Dépenses" id="IMd-S6-Uuk"/>
                     <connections>
                         <outlet property="addButton" destination="rwL-x0-46s" id="zfO-0j-PsJ"/>
-                        <outlet property="deleteButton" destination="MGn-hW-Eek" id="9Jp-IR-qTR"/>
-                        <outlet property="editButton" destination="EIN-n8-Vny" id="feR-Ef-B9E"/>
                         <outlet property="table" destination="JMq-wZ-FNI" id="nlI-LR-xeO"/>
                     </connections>
                 </viewController>

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+/*
 class DepensesTableController: NSObject, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -16,3 +16,4 @@ class DepensesTableController: NSObject, UITableViewDataSource {
     
 
 }
+*/

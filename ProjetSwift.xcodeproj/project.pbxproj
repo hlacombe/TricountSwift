@@ -35,6 +35,7 @@
 		2A70D90B224E7116009E1523 /* DepensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A70D90A224E7116009E1523 /* DepensesViewController.swift */; };
 		2A70D90D224E71AE009E1523 /* DepensesTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A70D90C224E71AE009E1523 /* DepensesTableController.swift */; };
 		2A70D90F224E7270009E1523 /* DepenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A70D90E224E7270009E1523 /* DepenseViewController.swift */; };
+		2A70D911224E769F009E1523 /* DepenseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A70D910224E769F009E1523 /* DepenseCell.swift */; };
 		2A831E0A224A2B5A006B6B12 /* NewTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A831E09224A2B5A006B6B12 /* NewTripViewController.swift */; };
 		2A8963652244DC5500D09A7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8963642244DC5500D09A7E /* AppDelegate.swift */; };
 		2A89636A2244DC5500D09A7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A8963682244DC5500D09A7E /* Main.storyboard */; };
@@ -95,6 +96,7 @@
 		2A70D90A224E7116009E1523 /* DepensesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepensesViewController.swift; sourceTree = "<group>"; };
 		2A70D90C224E71AE009E1523 /* DepensesTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepensesTableController.swift; sourceTree = "<group>"; };
 		2A70D90E224E7270009E1523 /* DepenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepenseViewController.swift; sourceTree = "<group>"; };
+		2A70D910224E769F009E1523 /* DepenseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepenseCell.swift; sourceTree = "<group>"; };
 		2A831E09224A2B5A006B6B12 /* NewTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTripViewController.swift; sourceTree = "<group>"; };
 		2A8963612244DC5500D09A7E /* ProjetSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjetSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A8963642244DC5500D09A7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 			children = (
 				2A3EB957224A918100F1A57A /* PersonCell.swift */,
 				2A3EB930224A3AB300F1A57A /* TripCell.swift */,
+				2A70D910224E769F009E1523 /* DepenseCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -435,6 +438,7 @@
 				BF30F38F22458D0B00C931FB /* PersonDAO.swift in Sources */,
 				2A3EB92C224A2D6100F1A57A /* EditTripViewController.swift in Sources */,
 				BF30F39022458D0B00C931FB /* TripDAO.swift in Sources */,
+				2A70D911224E769F009E1523 /* DepenseCell.swift in Sources */,
 				2A3EB960224A973900F1A57A /* Trip.swift in Sources */,
 				2A3EB94C224A913D00F1A57A /* ActivityDAO.swift in Sources */,
 				2A3EB94E224A914D00F1A57A /* DepenseDAO.swift in Sources */,

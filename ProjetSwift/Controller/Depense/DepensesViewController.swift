@@ -17,12 +17,12 @@ class DepensesViewController: UIViewController {
     @IBOutlet weak var table: UITableView!
     
     var currentVoyage: Voyage?
-    var tableController: DepensesTableController?
+    //var tableController: DepensesTableController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.currentVoyage = CurrentVoyageSingleton.shared.voyage
-        self.tableController = DepensesTableController(tableView: table, current: currentVoyage!)
+        //self.tableController = DepensesTableController(tableView: table, current: currentVoyage!)
         // Do any additional setup after loading the view.
     }
     
