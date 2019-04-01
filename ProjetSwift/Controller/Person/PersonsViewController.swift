@@ -37,12 +37,32 @@ class PersonsViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "EditPerson" {
-            if let dest = segue.destination as?
+            if segue.destination is
                 EditPersonViewController{
                 if let btn = sender as? UIButton{
                     if let contentView = btn.superview{
                         if let cell = contentView.superview as? PersonCell {
                             CurrentPersonSingleton.shared.person = tableController?.personsViewModel.get(personAt: self.table.indexPath(for: cell)!.row)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    @IBAction func ChangeStatusPerson(_ sender: Any) {
+        if let btn = sender as? UIButton{
+            if let contentView = btn.superview{
+                if (contentView.superview as? PersonCell) != nil {
+                    if let cell = contentView.superview as? PersonCell {
+                        if let person = tableController?.personsViewModel.get(personAt: self.table.indexPath(for: cell)!.row) {
+                            if person.isHidden {
+                                person.isHidden = false
+                            }
+                            else {
+                                person.isHidden = true
+                            }
+                            tableController?.dataSetChanged()
                         }
                     }
                 }

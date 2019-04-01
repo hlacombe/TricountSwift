@@ -21,6 +21,7 @@ class NewPersonViewController: UIViewController {
         newPerson.plastname = lastname
         newPerson.pfirstname = firstname
         newPerson.pdateDepart = dateArrivee
+        newPerson.isHidden = false
         newPerson.voyage = CurrentVoyageSingleton.shared.voyage
         CurrentVoyageSingleton.shared.voyage?.addToNewRelationship(newPerson)
         CoreDataManager.save()

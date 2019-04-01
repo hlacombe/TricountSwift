@@ -40,6 +40,16 @@ class PersonViewModel: NSObject {
     public var count : Int {
         return self.personsFetched.fetchedObjects?.count ?? 0
     }
+    
+        
+    public func delete(person: Person){
+        if let indexPath = self.personsFetched.indexPath(forObject: person){
+            PersonDAO.delete(person: person)
+            self.delegate?.personDeleted(at: indexPath)
+        }
+    }
+    
+    
     public func get(personAt index: Int) -> Person?{
         return self.personsFetched.object(at: IndexPath(row: index, section: 0))
     }

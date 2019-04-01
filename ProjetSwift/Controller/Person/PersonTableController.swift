@@ -43,6 +43,16 @@ class PersonTableController: NSObject, UITableViewDataSource, PersonsViewModelDe
                 cell.Nom.text = person.firstname
             }
             cell.bilan.text = person.solde.description
+            if person.isHidden {
+                cell.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+                cell.Nom.textColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
+                cell.bilan.textColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
+            }
+            else{
+                cell.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+                cell.Nom.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+                cell.bilan.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            }
         }
         return cell
     }
@@ -56,10 +66,14 @@ class PersonTableController: NSObject, UITableViewDataSource, PersonsViewModelDe
     }
     
     func personUpdated(at indexPath: IndexPath) {
-        self.tableView.selectRow(at: indexPath, animated: true, scrollPosition: UITableView.ScrollPosition.middle)
+        self.tableView.selectRow(at: indexPath, animated: true, scrollPosition: UITableView.ScrollPosition.top)
     }
     
     func personAdded(at indexPath: IndexPath) {
+        self.tableView.selectRow(at: indexPath, animated: true, scrollPosition: UITableView.ScrollPosition.top)
+    }
+    
+    func personHidden(at indexPath: IndexPath) {
         self.tableView.selectRow(at: indexPath, animated: true, scrollPosition: UITableView.ScrollPosition.middle)
     }
     

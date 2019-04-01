@@ -12,17 +12,15 @@ class ActivityViewController: UIViewController {
 
     
     @IBOutlet weak var addButton: UIButton!
-    @IBOutlet weak var editButton: UIButton!
-    @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var table: UITableView!
     
     var currentVoyage: Voyage?
-    //var tableController: DepensesTableController?
+    var tableController: ActivityTableController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.currentVoyage = CurrentVoyageSingleton.shared.voyage
-        //self.tableController = DepensesTableController(tableView: table, current: currentVoyage!)
+        self.tableController = ActivityTableController(tableView: table)
         // Do any additional setup after loading the view.
     }
     

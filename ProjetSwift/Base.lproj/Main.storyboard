@@ -259,6 +259,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VKW-lq-kg6">
                                                     <rect key="frame" x="364" y="6" width="30" height="30"/>
                                                     <state key="normal" title="X"/>
+                                                    <connections>
+                                                        <action selector="ChangeStatusPerson:" destination="9MJ-sJ-XGI" eventType="touchUpInside" id="1du-MA-3M9"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JON-Ge-GYU">
                                                     <rect key="frame" x="299" y="6" width="57" height="30"/>
@@ -430,7 +433,7 @@
                                 <rect key="frame" x="10" y="226" width="394" height="444"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="IJK-5q-9q8" customClass="DepenseCell" customModule="ProjetSwift" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="IJK-5q-9q8" customClass="ActivityCell" customModule="ProjetSwift" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="394" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="Z" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IJK-5q-9q8" id="Yla-Lw-mxM">
@@ -477,8 +480,10 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="deleteBTn" destination="MGn-hW-Eek" id="9jj-j3-XA9"/>
-                                            <outlet property="intitule" destination="Kah-nN-b38" id="dAt-or-5BK"/>
-                                            <outlet property="montant" destination="SgH-Zc-n1H" id="oTA-2O-HhO"/>
+                                            <outlet property="deleteBtn" destination="MGn-hW-Eek" id="Uwb-2p-9IT"/>
+                                            <outlet property="editBtn" destination="EIN-n8-Vny" id="xbk-HO-HUj"/>
+                                            <outlet property="intitule" destination="Kah-nN-b38" id="dsj-de-i3K"/>
+                                            <outlet property="montant" destination="SgH-Zc-n1H" id="48V-tN-u2b"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

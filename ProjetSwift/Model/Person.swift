@@ -20,7 +20,6 @@ extension Person {
         set{ plastname = newValue }
     }
     public var solde : Double {
-        
         return 0.0
     }
     
@@ -31,6 +30,16 @@ extension Person {
     public var dateArrivee: Date? {
         get{ return self.pdateArrivee}
         set{ pdateArrivee = newValue }
+    }
+    
+    public var hasDebt: Bool {
+        get{ return self.pHasDebt}
+        set{ pHasDebt = newValue }
+    }
+    
+    public var isHidden: Bool {
+        get{ return self.pHidden}
+        set{ pHidden = newValue }
     }
     
     convenience init(firstname: String, lastname: String){

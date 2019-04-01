@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18D109" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Activity" representedClassName="Activity" syncable="YES" codeGenerationType="class">
         <attribute name="pdate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="pmontantTotal" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
@@ -17,6 +17,8 @@
         <attribute name="pdateArrivee" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="pdateDepart" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="pfirstname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pHasDebt" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="pHidden" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="pimg" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="plastname" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="psolde" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
@@ -36,7 +38,7 @@
     <elements>
         <element name="Activity" positionX="6.47265625" positionY="121.71875" width="128" height="120"/>
         <element name="Depense" positionX="-88.07421875" positionY="-219.2890625" width="128" height="105"/>
-        <element name="Person" positionX="-309.47265625" positionY="-297.40625" width="128" height="180"/>
+        <element name="Person" positionX="-309.47265625" positionY="-297.40625" width="128" height="210"/>
         <element name="Voyage" positionX="-411.11328125" positionY="-1.52734375" width="128" height="150"/>
     </elements>
 </model>
