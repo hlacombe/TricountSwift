@@ -33,11 +33,6 @@ extension Person {
         set{ pdateArrivee = newValue }
     }
     
-    public var dateDepart: Date? {
-        get{ return self.pdateDepart}
-        set{ pdateDepart = newValue }
-    }
-    
     convenience init(firstname: String, lastname: String){
         self.init(context: CoreDataManager.context)
         self.pfirstname = firstname

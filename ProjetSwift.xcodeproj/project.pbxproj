@@ -31,10 +31,6 @@
 		2A70D902224E5239009E1523 /* CurrentPersonSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A70D901224E5239009E1523 /* CurrentPersonSingleton.swift */; };
 		2A70D905224E5AD7009E1523 /* CurrentVoyageSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A70D903224E5AD6009E1523 /* CurrentVoyageSingleton.swift */; };
 		2A70D906224E5AD7009E1523 /* DebtCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A70D904224E5AD6009E1523 /* DebtCalculator.swift */; };
-		2A70D908224E70EF009E1523 /* NewDepenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A70D907224E70EF009E1523 /* NewDepenseViewController.swift */; };
-		2A70D90B224E7116009E1523 /* DepensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A70D90A224E7116009E1523 /* DepensesViewController.swift */; };
-		2A70D90D224E71AE009E1523 /* DepensesTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A70D90C224E71AE009E1523 /* DepensesTableController.swift */; };
-		2A70D90F224E7270009E1523 /* DepenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A70D90E224E7270009E1523 /* DepenseViewController.swift */; };
 		2A70D911224E769F009E1523 /* DepenseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A70D910224E769F009E1523 /* DepenseCell.swift */; };
 		2A831E0A224A2B5A006B6B12 /* NewTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A831E09224A2B5A006B6B12 /* NewTripViewController.swift */; };
 		2A8963652244DC5500D09A7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8963642244DC5500D09A7E /* AppDelegate.swift */; };
@@ -48,6 +44,11 @@
 		BF30F38F22458D0B00C931FB /* PersonDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF30F38C22458D0B00C931FB /* PersonDAO.swift */; };
 		BF30F39022458D0B00C931FB /* TripDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF30F38D22458D0B00C931FB /* TripDAO.swift */; };
 		BF30F394224594CC00C931FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF30F392224594CC00C931FB /* ViewController.swift */; };
+		BF93E95F2252527000E066E1 /* ActivityTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF93E95A2252526F00E066E1 /* ActivityTableController.swift */; };
+		BF93E9602252527000E066E1 /* NewActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF93E95B2252527000E066E1 /* NewActivityViewController.swift */; };
+		BF93E9612252527000E066E1 /* ActivityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF93E95C2252527000E066E1 /* ActivityDetailViewController.swift */; };
+		BF93E9622252527000E066E1 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF93E95D2252527000E066E1 /* ActivityViewController.swift */; };
+		BF93E9632252527000E066E1 /* ActivityFetchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF93E95E2252527000E066E1 /* ActivityFetchResultController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,10 +93,6 @@
 		2A70D901224E5239009E1523 /* CurrentPersonSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentPersonSingleton.swift; sourceTree = "<group>"; };
 		2A70D903224E5AD6009E1523 /* CurrentVoyageSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentVoyageSingleton.swift; sourceTree = "<group>"; };
 		2A70D904224E5AD6009E1523 /* DebtCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebtCalculator.swift; sourceTree = "<group>"; };
-		2A70D907224E70EF009E1523 /* NewDepenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDepenseViewController.swift; sourceTree = "<group>"; };
-		2A70D90A224E7116009E1523 /* DepensesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepensesViewController.swift; sourceTree = "<group>"; };
-		2A70D90C224E71AE009E1523 /* DepensesTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepensesTableController.swift; sourceTree = "<group>"; };
-		2A70D90E224E7270009E1523 /* DepenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepenseViewController.swift; sourceTree = "<group>"; };
 		2A70D910224E769F009E1523 /* DepenseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepenseCell.swift; sourceTree = "<group>"; };
 		2A831E09224A2B5A006B6B12 /* NewTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTripViewController.swift; sourceTree = "<group>"; };
 		2A8963612244DC5500D09A7E /* ProjetSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjetSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +112,11 @@
 		BF30F38C22458D0B00C931FB /* PersonDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonDAO.swift; sourceTree = "<group>"; };
 		BF30F38D22458D0B00C931FB /* TripDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripDAO.swift; sourceTree = "<group>"; };
 		BF30F392224594CC00C931FB /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BF93E95A2252526F00E066E1 /* ActivityTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableController.swift; sourceTree = "<group>"; };
+		BF93E95B2252527000E066E1 /* NewActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewActivityViewController.swift; sourceTree = "<group>"; };
+		BF93E95C2252527000E066E1 /* ActivityDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDetailViewController.swift; sourceTree = "<group>"; };
+		BF93E95D2252527000E066E1 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		BF93E95E2252527000E066E1 /* ActivityFetchResultController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityFetchResultController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,10 +193,11 @@
 		2A70D909224E70F5009E1523 /* Depense */ = {
 			isa = PBXGroup;
 			children = (
-				2A70D907224E70EF009E1523 /* NewDepenseViewController.swift */,
-				2A70D90A224E7116009E1523 /* DepensesViewController.swift */,
-				2A70D90C224E71AE009E1523 /* DepensesTableController.swift */,
-				2A70D90E224E7270009E1523 /* DepenseViewController.swift */,
+				BF93E95C2252527000E066E1 /* ActivityDetailViewController.swift */,
+				BF93E95E2252527000E066E1 /* ActivityFetchResultController.swift */,
+				BF93E95A2252526F00E066E1 /* ActivityTableController.swift */,
+				BF93E95D2252527000E066E1 /* ActivityViewController.swift */,
+				BF93E95B2252527000E066E1 /* NewActivityViewController.swift */,
 			);
 			path = Depense;
 			sourceTree = "<group>";
@@ -422,16 +425,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A70D90B224E7116009E1523 /* DepensesViewController.swift in Sources */,
 				2A3EB95D224A973300F1A57A /* Depense.swift in Sources */,
 				2A3EB95C224A973300F1A57A /* Person.swift in Sources */,
+				BF93E9622252527000E066E1 /* ActivityViewController.swift in Sources */,
 				2A3EB931224A3AB300F1A57A /* TripCell.swift in Sources */,
 				2A70D8FA224E19FF009E1523 /* NewPersonViewController.swift in Sources */,
 				2A70D902224E5239009E1523 /* CurrentPersonSingleton.swift in Sources */,
 				2A3EB940224A6EFC00F1A57A /* TripTabBarController.swift in Sources */,
-				2A70D90F224E7270009E1523 /* DepenseViewController.swift in Sources */,
-				2A70D908224E70EF009E1523 /* NewDepenseViewController.swift in Sources */,
+				BF93E9632252527000E066E1 /* ActivityFetchResultController.swift in Sources */,
 				2A3EB955224A917400F1A57A /* PersonFetchResultController.swift in Sources */,
+				BF93E95F2252527000E066E1 /* ActivityTableController.swift in Sources */,
 				2A89636D2244DC5500D09A7E /* ProjetSwift.xcdatamodeld in Sources */,
 				2A3EB950224A916800F1A57A /* PersonViewModel.swift in Sources */,
 				2A831E0A224A2B5A006B6B12 /* NewTripViewController.swift in Sources */,
@@ -443,6 +446,7 @@
 				2A3EB94C224A913D00F1A57A /* ActivityDAO.swift in Sources */,
 				2A3EB94E224A914D00F1A57A /* DepenseDAO.swift in Sources */,
 				2A70D905224E5AD7009E1523 /* CurrentVoyageSingleton.swift in Sources */,
+				BF93E9602252527000E066E1 /* NewActivityViewController.swift in Sources */,
 				2A3EB954224A917400F1A57A /* PersonTableController.swift in Sources */,
 				2A3EB956224A917400F1A57A /* PersonsViewController.swift in Sources */,
 				BF30F394224594CC00C931FB /* ViewController.swift in Sources */,
@@ -455,7 +459,7 @@
 				2A3EB935224A3AD800F1A57A /* TripFetchResultController.swift in Sources */,
 				2A3EB95E224A973300F1A57A /* Activity.swift in Sources */,
 				BF30F38E22458D0B00C931FB /* CoreDataManager.swift in Sources */,
-				2A70D90D224E71AE009E1523 /* DepensesTableController.swift in Sources */,
+				BF93E9612252527000E066E1 /* ActivityDetailViewController.swift in Sources */,
 				2A70D900224E4FA1009E1523 /* EditPersonViewController.swift in Sources */,
 				2A3EB937224A3ADB00F1A57A /* TripTableController.swift in Sources */,
 			);

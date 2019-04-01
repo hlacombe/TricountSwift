@@ -11,28 +11,40 @@ import UIKit
 class PersonDetailsViewController: UIViewController {
 
     @IBOutlet weak var transactionTab: UITableView!
-    @IBOutlet weak var transactionLabel: UILabel!
-    @IBOutlet weak var bilanTab: UITableView!
     @IBOutlet weak var bilanLabel: UILabel!
-    @IBOutlet weak var dateArrivee: UIDatePicker!
-    @IBOutlet weak var lastname: UITextField!
+    @IBOutlet weak var bilanTab: UITableView!
     @IBOutlet weak var firstname: UITextField!
+    @IBOutlet weak var lastname: UITextField!
+    @IBOutlet weak var dateArrivee: UIDatePicker!
+    @IBOutlet weak var titleTop: UILabel!
+    @IBOutlet weak var validerBtn: UIButton!
+    @IBOutlet weak var transactionLabel: UILabel!
     
-    var person : Person?
+    var person : Person!
+    var btnlabel: String?
+    var titleLabel: String?
+    
     var source: UIViewController?
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        if let p = person {
-            self.lastname.text = p.lastname
-            self.firstname.text = p.firstname
-            self.dateArrivee.date = p.dateArrivee!
-        }
-        if let s = source as? NewPersonViewController {
+        self.person = CurrentPersonSingleton.shared.person
+
+        if ((source as? NewPersonViewController) != nil) {
             self.bilanTab.isHidden = true
             self.bilanLabel.isHidden = true
             self.transactionTab.isHidden = true
             self.transactionLabel.isHidden = true
+        }
+        if ((source as? EditPersonViewController) != nil) {
+            self.titleTop.text = "Modification d'un voyageur"
+            self.validerBtn.setTitle("Modifier", for: .normal)
+            if person.lastname != "" {
+                self.lastname.text = person.lastname
+            }
+            self.firstname.text = person.firstname
+            if let da = person.dateArrivee {
+                self.dateArrivee.date = da
+            }
         }
     }
     

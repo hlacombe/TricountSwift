@@ -35,4 +35,18 @@ class PersonsViewController: UIViewController {
         tableController?.tableView.reloadData()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "EditPerson" {
+            if let dest = segue.destination as?
+                EditPersonViewController{
+                if let btn = sender as? UIButton{
+                    if let contentView = btn.superview{
+                        if let cell = contentView.superview as? PersonCell {
+                            CurrentPersonSingleton.shared.person = tableController?.personsViewModel.get(personAt: self.table.indexPath(for: cell)!.row)
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

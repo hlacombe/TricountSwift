@@ -264,7 +264,7 @@
                                                     <rect key="frame" x="299" y="6" width="57" height="30"/>
                                                     <state key="normal" title="Modifier"/>
                                                     <connections>
-                                                        <segue destination="7MA-hY-llw" kind="show" id="CVj-YZ-PCN"/>
+                                                        <segue destination="7MA-hY-llw" kind="show" identifier="EditPerson" id="CVj-YZ-PCN"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -360,10 +360,10 @@
             </objects>
             <point key="canvasLocation" x="2694" y="1067"/>
         </scene>
-        <!--View Controller-->
+        <!--Edit Person View Controller-->
         <scene sceneID="nby-rL-oIU">
             <objects>
-                <viewController id="7MA-hY-llw" sceneMemberID="viewController">
+                <viewController id="7MA-hY-llw" customClass="EditPersonViewController" customModule="ProjetSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6xE-Di-vRO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -421,7 +421,7 @@
         <!--Dépenses-->
         <scene sceneID="oke-h8-odO">
             <objects>
-                <viewController id="PrE-9V-CDm" customClass="DepensesViewController" customModule="ProjetSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="PrE-9V-CDm" customClass="ActivityViewController" customModule="ProjetSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kHP-Ea-rYU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -477,7 +477,6 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="deleteBTn" destination="MGn-hW-Eek" id="9jj-j3-XA9"/>
-                                            <outlet property="editBtn" destination="EIN-n8-Vny" id="FXx-Df-mYI"/>
                                             <outlet property="intitule" destination="Kah-nN-b38" id="dAt-or-5BK"/>
                                             <outlet property="montant" destination="SgH-Zc-n1H" id="oTA-2O-HhO"/>
                                         </connections>
@@ -1012,11 +1011,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transactions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkO-Ji-Dvm">
-                                <rect key="frame" x="68" y="452" width="98" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remboursement" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkO-Ji-Dvm">
+                                <rect key="frame" x="68" y="452" width="126.33333333333331" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="g72-nV-zqZ"/>
-                                    <constraint firstAttribute="width" constant="98" id="lbo-bw-42K"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -1045,8 +1043,8 @@
                                     <constraint firstAttribute="height" constant="174" id="25m-Bh-zzE"/>
                                 </constraints>
                             </tableView>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nom de la personne" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zFy-ie-iSb">
-                                <rect key="frame" x="68" y="73" width="278" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nom de la personne" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zFy-ie-iSb">
+                                <rect key="frame" x="68" y="71" width="278" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -1086,13 +1084,15 @@
                         <viewLayoutGuide key="safeArea" id="yjm-tl-9ga"/>
                     </view>
                     <connections>
-                        <outlet property="bilanLabel" destination="a8k-hO-anW" id="ZVw-hZ-dtT"/>
-                        <outlet property="bilanTab" destination="cJL-XV-SWh" id="Wiq-fN-KZ4"/>
-                        <outlet property="dateArrivee" destination="G7V-jK-rgq" id="2aw-ec-sz5"/>
-                        <outlet property="firstname" destination="tYo-Wl-Fdv" id="Iqf-bu-jvz"/>
-                        <outlet property="lastname" destination="zFy-ie-iSb" id="NEo-fu-KhE"/>
-                        <outlet property="transactionLabel" destination="bkO-Ji-Dvm" id="Dk0-Ak-zpv"/>
-                        <outlet property="transactionTab" destination="kFZ-2u-Wy2" id="tJ0-FV-bEI"/>
+                        <outlet property="bilanLabel" destination="a8k-hO-anW" id="kuQ-fm-fW8"/>
+                        <outlet property="bilanTab" destination="cJL-XV-SWh" id="0sA-0C-Vmf"/>
+                        <outlet property="dateArrivee" destination="G7V-jK-rgq" id="kM8-3Y-IwT"/>
+                        <outlet property="firstname" destination="tYo-Wl-Fdv" id="KDb-xg-hIc"/>
+                        <outlet property="lastname" destination="zFy-ie-iSb" id="Qti-9h-Vhz"/>
+                        <outlet property="titleTop" destination="PQq-dx-Dcf" id="hMs-z8-Ljg"/>
+                        <outlet property="transactionLabel" destination="bkO-Ji-Dvm" id="S7M-Gg-68p"/>
+                        <outlet property="transactionTab" destination="kFZ-2u-Wy2" id="faa-CR-LRW"/>
+                        <outlet property="validerBtn" destination="LVo-RA-1LW" id="AnS-hg-F0y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jMv-PH-RoZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1105,8 +1105,8 @@
         <image name="Image" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3mL-nd-Xkv"/>
+        <segue reference="Tcz-Ad-RXU"/>
         <segue reference="RTY-1E-q7j"/>
-        <segue reference="ky8-JX-yHy"/>
+        <segue reference="fdu-gh-X91"/>
     </inferredMetricsTieBreakers>
 </document>

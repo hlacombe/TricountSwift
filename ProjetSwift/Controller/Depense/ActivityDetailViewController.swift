@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DepenseViewController: UIViewController {
+class ActivityDetailViewController: UIViewController {
 
     @IBOutlet weak var intitule: UITextField!
     @IBOutlet weak var crediteur: UITextField!
