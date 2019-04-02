@@ -24,7 +24,12 @@ extension Person {
     }
     
     public var fullname: String {
-        return self.firstname + " " + self.lastname
+        if self.lastname !=  "" {
+            return self.firstname + " " + self.lastname
+        }
+        else {
+            return self.firstname
+        }
     }
 
     public var dateArrivee: Date? {

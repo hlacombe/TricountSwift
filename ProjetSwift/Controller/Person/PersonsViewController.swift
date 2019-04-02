@@ -36,16 +36,18 @@ class PersonsViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "EditPerson" {
-            if segue.destination is
-                EditPersonViewController{
-                if let btn = sender as? UIButton{
-                    if let contentView = btn.superview{
-                        if let cell = contentView.superview as? PersonCell {
-                            CurrentPersonSingleton.shared.person = tableController?.personsViewModel.get(personAt: self.table.indexPath(for: cell)!.row)
-                        }
+        if segue.identifier == "EditPerson"{
+            if let btn = sender as? UIButton{
+                if let contentView = btn.superview{
+                    if let cell = contentView.superview as? PersonCell {
+                        CurrentPersonSingleton.shared.person = tableController?.personsViewModel.get(personAt: self.table.indexPath(for: cell)!.row)
                     }
                 }
+            }
+        }
+        if segue.identifier == "ShowPerson" {
+            if let cell = sender as? PersonCell {
+                CurrentPersonSingleton.shared.person = tableController?.personsViewModel.get(personAt: self.table.indexPath(for: cell)!.row)
             }
         }
     }
@@ -68,5 +70,10 @@ class PersonsViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    func deletePerson(person: Person){
+        tableController?.personsViewModel.delete(person: person)
+        tableController?.dataSetChanged()
     }
 }

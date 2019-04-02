@@ -50,6 +50,7 @@
 		BF93E970225267C800E066E1 /* ActivityTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF93E96B225267C800E066E1 /* ActivityTableController.swift */; };
 		BF93E971225267C800E066E1 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF93E96C225267C800E066E1 /* ActivityViewController.swift */; };
 		BF93E972225267C800E066E1 /* NewActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF93E96D225267C800E066E1 /* NewActivityViewController.swift */; };
+		BF93E9742252C39300E066E1 /* ShowPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF93E9732252C39300E066E1 /* ShowPersonViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +120,7 @@
 		BF93E96B225267C800E066E1 /* ActivityTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableController.swift; sourceTree = "<group>"; };
 		BF93E96C225267C800E066E1 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		BF93E96D225267C800E066E1 /* NewActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewActivityViewController.swift; sourceTree = "<group>"; };
+		BF93E9732252C39300E066E1 /* ShowPersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPersonViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 				2A3EB953224A917300F1A57A /* PersonsViewController.swift */,
 				2A70D8FD224E3304009E1523 /* PersonDetailsViewController.swift */,
 				2A70D8FF224E4FA1009E1523 /* EditPersonViewController.swift */,
+				BF93E9732252C39300E066E1 /* ShowPersonViewController.swift */,
 			);
 			path = Person;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 				2A3EB935224A3AD800F1A57A /* TripFetchResultController.swift in Sources */,
 				2A3EB95E224A973300F1A57A /* Activity.swift in Sources */,
 				BF30F38E22458D0B00C931FB /* CoreDataManager.swift in Sources */,
+				BF93E9742252C39300E066E1 /* ShowPersonViewController.swift in Sources */,
 				2A70D900224E4FA1009E1523 /* EditPersonViewController.swift in Sources */,
 				2A3EB937224A3ADB00F1A57A /* TripTableController.swift in Sources */,
 			);
