@@ -43,6 +43,8 @@
 		BF30F38F22458D0B00C931FB /* PersonDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF30F38C22458D0B00C931FB /* PersonDAO.swift */; };
 		BF30F39022458D0B00C931FB /* TripDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF30F38D22458D0B00C931FB /* TripDAO.swift */; };
 		BF30F394224594CC00C931FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF30F392224594CC00C931FB /* ViewController.swift */; };
+		BF7A3D7C225394BD0000FD59 /* PersonInActivityTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7A3D7B225394BD0000FD59 /* PersonInActivityTableController.swift */; };
+		BF7A3D7E225395600000FD59 /* PersonActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7A3D7D225395600000FD59 /* PersonActivityCell.swift */; };
 		BF93E9652252672500E066E1 /* ActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF93E9642252672500E066E1 /* ActivityViewModel.swift */; };
 		BF93E9672252676300E066E1 /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF93E9662252676300E066E1 /* ActivityCell.swift */; };
 		BF93E96E225267C800E066E1 /* ActivityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF93E969225267C800E066E1 /* ActivityDetailViewController.swift */; };
@@ -113,6 +115,8 @@
 		BF30F38C22458D0B00C931FB /* PersonDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonDAO.swift; sourceTree = "<group>"; };
 		BF30F38D22458D0B00C931FB /* TripDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripDAO.swift; sourceTree = "<group>"; };
 		BF30F392224594CC00C931FB /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BF7A3D7B225394BD0000FD59 /* PersonInActivityTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonInActivityTableController.swift; sourceTree = "<group>"; };
+		BF7A3D7D225395600000FD59 /* PersonActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonActivityCell.swift; sourceTree = "<group>"; };
 		BF93E9642252672500E066E1 /* ActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewModel.swift; sourceTree = "<group>"; };
 		BF93E9662252676300E066E1 /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
 		BF93E969225267C800E066E1 /* ActivityDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDetailViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +158,7 @@
 				2A3EB957224A918100F1A57A /* PersonCell.swift */,
 				2A3EB930224A3AB300F1A57A /* TripCell.swift */,
 				BF93E9662252676300E066E1 /* ActivityCell.swift */,
+				BF7A3D7D225395600000FD59 /* PersonActivityCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -296,6 +301,7 @@
 				BF93E96B225267C800E066E1 /* ActivityTableController.swift */,
 				BF93E96C225267C800E066E1 /* ActivityViewController.swift */,
 				BF93E96D225267C800E066E1 /* NewActivityViewController.swift */,
+				BF7A3D7B225394BD0000FD59 /* PersonInActivityTableController.swift */,
 			);
 			path = Activity;
 			sourceTree = "<group>";
@@ -444,6 +450,7 @@
 				2A3EB950224A916800F1A57A /* PersonViewModel.swift in Sources */,
 				2A831E0A224A2B5A006B6B12 /* NewTripViewController.swift in Sources */,
 				BF30F38F22458D0B00C931FB /* PersonDAO.swift in Sources */,
+				BF7A3D7E225395600000FD59 /* PersonActivityCell.swift in Sources */,
 				2A3EB92C224A2D6100F1A57A /* EditTripViewController.swift in Sources */,
 				BF30F39022458D0B00C931FB /* TripDAO.swift in Sources */,
 				2A3EB960224A973900F1A57A /* Trip.swift in Sources */,
@@ -469,6 +476,7 @@
 				BF30F38E22458D0B00C931FB /* CoreDataManager.swift in Sources */,
 				BF93E9742252C39300E066E1 /* ShowPersonViewController.swift in Sources */,
 				2A70D900224E4FA1009E1523 /* EditPersonViewController.swift in Sources */,
+				BF7A3D7C225394BD0000FD59 /* PersonInActivityTableController.swift in Sources */,
 				2A3EB937224A3ADB00F1A57A /* TripTableController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -645,6 +653,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 28PHNZ48PC;
 				INFOPLIST_FILE = ProjetSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -662,6 +671,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 28PHNZ48PC;
 				INFOPLIST_FILE = ProjetSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

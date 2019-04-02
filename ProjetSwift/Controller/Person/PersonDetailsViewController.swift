@@ -57,18 +57,20 @@ class PersonDetailsViewController: UIViewController {
         }
         if let firstname = firstname.text {
             if let sourceController = source as? NewPersonViewController {
-                if let lastname = lastname.text {
-                    sourceController.create(firstname: firstname, lastname: lastname, dateArrivee: dateArrivee.date)
-                }
-                else {
-                    sourceController.create(firstname: firstname, lastname: "", dateArrivee: dateArrivee.date)
+                let btn = (sender as? UIButton)
+                if btn == self.validerBtn {
+                    if let lastname = lastname.text {
+                        sourceController.create(firstname: firstname, lastname: lastname, dateArrivee: self.dateArrivee.date)
+                    }
+                    else {
+                        sourceController.create(firstname: firstname, lastname: "", dateArrivee: self.dateArrivee.date)
+                    }
                 }
             }
             if let sourceController = source as? EditPersonViewController {
                 sourceController.edit(person: person, firstname: firstname, lastname: lastname.text ?? "", datedebut: dateArrivee.date)
             }
         }
-        
         self.source = nil
     }
     

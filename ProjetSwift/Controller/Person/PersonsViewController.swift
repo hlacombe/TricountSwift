@@ -64,7 +64,7 @@ class PersonsViewController: UIViewController {
                             else {
                                 person.isHidden = true
                             }
-                            tableController?.dataSetChanged()
+                            //tableController?.dataSetChanged()
                         }
                     }
                 }
