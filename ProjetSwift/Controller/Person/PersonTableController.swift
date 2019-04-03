@@ -12,20 +12,22 @@ import Foundation
 class PersonTableController: NSObject, UITableViewDataSource, PersonsViewModelDelegate {
     
     let currentVoyage: Voyage?
-    var tableView   : UITableView
+    let tableView   : UITableView
     var personsViewModel : PersonViewModel
     let fetchResultController : PersonFetchResultController
+    var checkedIndexPath:NSIndexPath?
     
     init(tableView: UITableView, current: Voyage) {
         self.currentVoyage = current
         self.tableView        = tableView
+        self.tableView.reloadData()
         self.fetchResultController = PersonFetchResultController(view : tableView)
         self.personsViewModel = PersonViewModel(data: self.fetchResultController.personsFetched)
         super.init()
         self.tableView.dataSource       = self
         self.personsViewModel.delegate    = self
     }
-    
+        
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -35,8 +37,9 @@ class PersonTableController: NSObject, UITableViewDataSource, PersonsViewModelDe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PersonCell", for: indexPath) as! PersonCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PersonCell") as! PersonCell
         if let person = personsViewModel.get(personAt: indexPath.row){
+            print(person.fullname)
             if let l : String = person.lastname {
                 cell.Nom.text = person.firstname + " " + l
             } else {

@@ -20,7 +20,6 @@ class PersonsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.currentVoyage = CurrentVoyageSingleton.shared.voyage
-        self.tableController = PersonTableController(tableView: table, current: currentVoyage!)
         self.nomVoyage.text = currentVoyage?.nom
         if let dateDebut = currentVoyage?.dateArrivee,let dateFin = currentVoyage?.dateDepart{
             let formatter = DateFormatter()
@@ -35,6 +34,15 @@ class PersonsViewController: UIViewController {
         tableController?.tableView.reloadData()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        self.tableController?.personsViewModel.delegate = nil
+        self.tableController = nil
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tableController = PersonTableController(tableView: table, current: currentVoyage!)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "EditPerson"{
             if let btn = sender as? UIButton{
@@ -45,9 +53,11 @@ class PersonsViewController: UIViewController {
                 }
             }
         }
-        if segue.identifier == "ShowPerson" {
-            if let cell = sender as? PersonCell {
-                CurrentPersonSingleton.shared.person = tableController?.personsViewModel.get(personAt: self.table.indexPath(for: cell)!.row)
+        else {
+            if segue.identifier == "ShowPerson" {
+                if let cell = sender as? PersonCell {
+                    CurrentPersonSingleton.shared.person = tableController?.personsViewModel.get(personAt: self.table.indexPath(for: cell)!.row)
+                }
             }
         }
     }
@@ -64,7 +74,6 @@ class PersonsViewController: UIViewController {
                             else {
                                 person.isHidden = true
                             }
-                            //tableController?.dataSetChanged()
                         }
                     }
                 }
