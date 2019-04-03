@@ -16,9 +16,13 @@ class ShowPersonViewController: UIViewController {
     @IBOutlet weak var dates: UILabel!
     
     var person: Person!
+    var tableDepenseController: PersonExpensesTableController?
+    var tableRemboursementController: RemboursementTableController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableDepenseController = PersonExpensesTableController(tableView: tabTransactions)
+        self.tableRemboursementController = RemboursementTableController(tableView: tabBilan)
         self.person = CurrentPersonSingleton.shared.person
         // Do any additional setup after loading the view.
         self.fullname.text = person.fullname

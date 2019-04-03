@@ -30,7 +30,8 @@ class DepenseDAO: NSObject {
         } }
 
     static func fetchDepenseForVoyage(forVoyage voyage: Voyage) -> [Depense]?{
-        self.request.predicate = NSPredicate(format: "pvoyage == %@", voyage)
+        let acts = voyage.activites
+        self.request.predicate = NSPredicate(format: "psourceActivity IN %@", acts!)
         do{
             return try CoreDataManager.context.fetch(request) as [Depense]
         }

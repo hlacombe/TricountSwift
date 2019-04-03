@@ -45,7 +45,7 @@ class TripViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         if let bt = buttonText {
             validerButton.setTitle(bt, for: .normal)
         }
-        imagePicker.delegate = self
+        //imagePicker.delegate = self
     }
     
     func alert(){

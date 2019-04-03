@@ -9,21 +9,31 @@
 import UIKit
 import Foundation
 
-class DebtCalculator{
+class proposal{
+    var creditor: Person
+    var debitor: Person
+    var montant: Double
+    
+    init(c: Person, d: Person, m: Double) {
+        self.creditor = c
+        self.debitor = d
+        self.montant = m
+    }
+}
 
+class DebtCalculator{
+    
     var debts: Dictionary<Person, Double>
     var depenses: [Depense]?
-    var proposedRefunds: Dictionary<Person, Double>
+    var proposedRefunds: [proposal]
     var participants: [Person]?
-    var solde: Double
     
     init(){
-        self.solde = 0.0
-        self.proposedRefunds = Dictionary<Person, Double>()
+        self.proposedRefunds = [proposal]()
         let voyage: Voyage = CurrentVoyageSingleton.shared.voyage!
         self.depenses = DepenseDAO.fetchDepenseForVoyage(forVoyage: voyage)
         self.debts = Dictionary<Person, Double>()
-        //self.participants = PersonDAO.fetchPersonForVoyage(forVoyage: voyage)
+        self.participants = PersonDAO.fetchPersonForVoyage()
         generateDebts()
     }
     
@@ -32,18 +42,17 @@ class DebtCalculator{
             return
         }
         for p in participants!{
-            debts.updateValue(balanceForPerson(for: p), forKey: p)
+            debts[p] = balanceForPerson(for: p)
         }
-        while solde != 0.0 {
+        while isSomeoneInDebt(){
             if let c = getTopCreditor(),let d = getTopDebitor(){
-            proposeRefund(creditor: c, debitor: d)
-            updateSolde()
+                self.proposeRefund(creditor: c, debitor: d)
             }
         }
     }
     
     func balanceForPerson(for name: Person) -> Double{
-        var balance: Double = 0.0
+        var balance: Double = 0
         guard depenses != nil else {
             return balance
         }
@@ -52,18 +61,18 @@ class DebtCalculator{
                 balance = balance + depense.montant
             }
             if depense.debiteur == name{
-                balance = balance + depense.montant
+                balance = balance - depense.montant
             }
         }
         return balance
     }
     
     func proposeRefund(creditor: Person, debitor: Person){
-        let montant = min(abs(debts[creditor]!), abs(debts[debitor]!))
-        self.proposedRefunds.updateValue(-montant, forKey: creditor)
-        self.proposedRefunds.updateValue(-montant, forKey: debitor)
+        let montant = min(abs(debts[debitor]!), abs(debts[creditor]!))
+        let p = proposal(c: creditor, d: debitor, m: montant)
+        self.proposedRefunds.append(p)
         self.debts.updateValue(debts[creditor]!-montant, forKey: creditor)
-        self.debts.updateValue(debts[debitor]!-montant, forKey: debitor)
+        self.debts.updateValue(debts[debitor]!+montant, forKey: debitor)
     }
     
     func getTopCreditor() -> Person?{
@@ -76,11 +85,24 @@ class DebtCalculator{
         return greatest?.key
     }
     
-    func updateSolde(){
-        var result: Double = 0.0
+    func isSomeoneInDebt() -> Bool{
         for p in debts.keys {
-            result = result + debts[p]!
+            if(debts[p]! > 0.0){
+                return true
+            }
         }
+        return false
     }
-
+    
+    func debtsForPerson(person: Person) -> [proposal]{
+        var result = [proposal]()
+        for p in self.proposedRefunds {
+            if p.debitor == person{
+                result.append(p)
+            }
+        }
+        return result
+    }
+    
 }
+

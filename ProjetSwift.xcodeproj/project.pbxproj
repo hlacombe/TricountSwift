@@ -53,6 +53,14 @@
 		BF93E971225267C800E066E1 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF93E96C225267C800E066E1 /* ActivityViewController.swift */; };
 		BF93E972225267C800E066E1 /* NewActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF93E96D225267C800E066E1 /* NewActivityViewController.swift */; };
 		BF93E9742252C39300E066E1 /* ShowPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF93E9732252C39300E066E1 /* ShowPersonViewController.swift */; };
+		BF93E9762254B7EE00E066E1 /* EditActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF93E9752254B7EE00E066E1 /* EditActivityViewController.swift */; };
+		BF93E9782254E38C00E066E1 /* CurrentActivitySingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF93E9772254E38C00E066E1 /* CurrentActivitySingleton.swift */; };
+		BF93E97A2255063200E066E1 /* ExpensePersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF93E9792255063200E066E1 /* ExpensePersonCell.swift */; };
+		BF93E97C2255063700E066E1 /* RemboursementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF93E97B2255063700E066E1 /* RemboursementCell.swift */; };
+		BF93E9822255072700E066E1 /* PersonExpenseFetchResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF93E97E2255072700E066E1 /* PersonExpenseFetchResultController.swift */; };
+		BF93E9832255072700E066E1 /* PersonExpensesTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF93E97F2255072700E066E1 /* PersonExpensesTableController.swift */; };
+		BF93E9842255072700E066E1 /* PersonExpenseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF93E9802255072700E066E1 /* PersonExpenseViewModel.swift */; };
+		BF93E9852255072700E066E1 /* RemboursementTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF93E9812255072700E066E1 /* RemboursementTableController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +133,14 @@
 		BF93E96C225267C800E066E1 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		BF93E96D225267C800E066E1 /* NewActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewActivityViewController.swift; sourceTree = "<group>"; };
 		BF93E9732252C39300E066E1 /* ShowPersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPersonViewController.swift; sourceTree = "<group>"; };
+		BF93E9752254B7EE00E066E1 /* EditActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditActivityViewController.swift; sourceTree = "<group>"; };
+		BF93E9772254E38C00E066E1 /* CurrentActivitySingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentActivitySingleton.swift; sourceTree = "<group>"; };
+		BF93E9792255063200E066E1 /* ExpensePersonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpensePersonCell.swift; sourceTree = "<group>"; };
+		BF93E97B2255063700E066E1 /* RemboursementCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemboursementCell.swift; sourceTree = "<group>"; };
+		BF93E97E2255072700E066E1 /* PersonExpenseFetchResultController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonExpenseFetchResultController.swift; sourceTree = "<group>"; };
+		BF93E97F2255072700E066E1 /* PersonExpensesTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonExpensesTableController.swift; sourceTree = "<group>"; };
+		BF93E9802255072700E066E1 /* PersonExpenseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonExpenseViewModel.swift; sourceTree = "<group>"; };
+		BF93E9812255072700E066E1 /* RemboursementTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemboursementTableController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +175,8 @@
 				2A3EB930224A3AB300F1A57A /* TripCell.swift */,
 				BF93E9662252676300E066E1 /* ActivityCell.swift */,
 				BF7A3D7D225395600000FD59 /* PersonActivityCell.swift */,
+				BF93E9792255063200E066E1 /* ExpensePersonCell.swift */,
+				BF93E97B2255063700E066E1 /* RemboursementCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -190,6 +208,7 @@
 		2A70D8FC224E1BBA009E1523 /* Person */ = {
 			isa = PBXGroup;
 			children = (
+				BF93E97D2255072700E066E1 /* TablesControllers */,
 				2A70D8F9224E19FF009E1523 /* NewPersonViewController.swift */,
 				2A3EB952224A917300F1A57A /* PersonFetchResultController.swift */,
 				2A3EB951224A917300F1A57A /* PersonTableController.swift */,
@@ -224,6 +243,7 @@
 		2A8963632244DC5500D09A7E /* ProjetSwift */ = {
 			isa = PBXGroup;
 			children = (
+				BF93E9772254E38C00E066E1 /* CurrentActivitySingleton.swift */,
 				2A70D901224E5239009E1523 /* CurrentPersonSingleton.swift */,
 				2A70D903224E5AD6009E1523 /* CurrentVoyageSingleton.swift */,
 				2A70D904224E5AD6009E1523 /* DebtCalculator.swift */,
@@ -302,8 +322,20 @@
 				BF93E96C225267C800E066E1 /* ActivityViewController.swift */,
 				BF93E96D225267C800E066E1 /* NewActivityViewController.swift */,
 				BF7A3D7B225394BD0000FD59 /* PersonInActivityTableController.swift */,
+				BF93E9752254B7EE00E066E1 /* EditActivityViewController.swift */,
 			);
 			path = Activity;
+			sourceTree = "<group>";
+		};
+		BF93E97D2255072700E066E1 /* TablesControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BF93E97E2255072700E066E1 /* PersonExpenseFetchResultController.swift */,
+				BF93E97F2255072700E066E1 /* PersonExpensesTableController.swift */,
+				BF93E9802255072700E066E1 /* PersonExpenseViewModel.swift */,
+				BF93E9812255072700E066E1 /* RemboursementTableController.swift */,
+			);
+			path = TablesControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -449,6 +481,7 @@
 				2A89636D2244DC5500D09A7E /* ProjetSwift.xcdatamodeld in Sources */,
 				2A3EB950224A916800F1A57A /* PersonViewModel.swift in Sources */,
 				2A831E0A224A2B5A006B6B12 /* NewTripViewController.swift in Sources */,
+				BF93E9832255072700E066E1 /* PersonExpensesTableController.swift in Sources */,
 				BF30F38F22458D0B00C931FB /* PersonDAO.swift in Sources */,
 				BF7A3D7E225395600000FD59 /* PersonActivityCell.swift in Sources */,
 				2A3EB92C224A2D6100F1A57A /* EditTripViewController.swift in Sources */,
@@ -457,6 +490,7 @@
 				2A3EB94C224A913D00F1A57A /* ActivityDAO.swift in Sources */,
 				2A3EB94E224A914D00F1A57A /* DepenseDAO.swift in Sources */,
 				2A70D905224E5AD7009E1523 /* CurrentVoyageSingleton.swift in Sources */,
+				BF93E9762254B7EE00E066E1 /* EditActivityViewController.swift in Sources */,
 				BF93E96E225267C800E066E1 /* ActivityDetailViewController.swift in Sources */,
 				2A3EB954224A917400F1A57A /* PersonTableController.swift in Sources */,
 				2A3EB956224A917400F1A57A /* PersonsViewController.swift in Sources */,
@@ -464,16 +498,22 @@
 				BF30F394224594CC00C931FB /* ViewController.swift in Sources */,
 				2A3EB958224A918100F1A57A /* PersonCell.swift in Sources */,
 				2A70D8FE224E3304009E1523 /* PersonDetailsViewController.swift in Sources */,
+				BF93E9782254E38C00E066E1 /* CurrentActivitySingleton.swift in Sources */,
 				2A8963652244DC5500D09A7E /* AppDelegate.swift in Sources */,
+				BF93E9852255072700E066E1 /* RemboursementTableController.swift in Sources */,
 				2A70D906224E5AD7009E1523 /* DebtCalculator.swift in Sources */,
 				BF93E9652252672500E066E1 /* ActivityViewModel.swift in Sources */,
 				BF93E971225267C800E066E1 /* ActivityViewController.swift in Sources */,
+				BF93E9842255072700E066E1 /* PersonExpenseViewModel.swift in Sources */,
 				2A3EB93A224A3AE900F1A57A /* TripViewModel.swift in Sources */,
 				BF93E970225267C800E066E1 /* ActivityTableController.swift in Sources */,
 				2A3EB92A224A2C2800F1A57A /* TripViewController.swift in Sources */,
 				2A3EB935224A3AD800F1A57A /* TripFetchResultController.swift in Sources */,
+				BF93E97A2255063200E066E1 /* ExpensePersonCell.swift in Sources */,
 				2A3EB95E224A973300F1A57A /* Activity.swift in Sources */,
+				BF93E97C2255063700E066E1 /* RemboursementCell.swift in Sources */,
 				BF30F38E22458D0B00C931FB /* CoreDataManager.swift in Sources */,
+				BF93E9822255072700E066E1 /* PersonExpenseFetchResultController.swift in Sources */,
 				BF93E9742252C39300E066E1 /* ShowPersonViewController.swift in Sources */,
 				2A70D900224E4FA1009E1523 /* EditPersonViewController.swift in Sources */,
 				BF7A3D7C225394BD0000FD59 /* PersonInActivityTableController.swift in Sources */,

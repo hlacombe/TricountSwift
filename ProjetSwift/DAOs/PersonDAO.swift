@@ -54,6 +54,15 @@ class PersonDAO: NSObject {
         catch{
             return nil
         } }
-
+    
+    static func fetchPersonForVoyage() -> [Person]? {
+        self.request.predicate = NSPredicate(format: "voyage == %@", CurrentVoyageSingleton.shared.voyage!)
+        do{
+            return try CoreDataManager.context.fetch(request) as [Person]
+        }
+        catch{
+            return nil
+        }
+    }
 }
 
