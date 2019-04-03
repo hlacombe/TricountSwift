@@ -29,7 +29,6 @@ class NewActivityViewController: UIViewController {
             newDepense.debiteur = person
             newDepense.montant = map[person]!
             newDepense.activite = newActivity
-            newActivity.addToPdepenses(newDepense)
         }
         CoreDataManager.save()
     }
@@ -41,6 +40,7 @@ class NewActivityViewController: UIViewController {
         // Pass the selected object to the new view controller.
         if let ActivityDetailViewController = segue.destination as? ActivityDetailViewController {
             ActivityDetailViewController.source = self
+            CurrentActivitySingleton.shared.activity = nil
         }
     }
  

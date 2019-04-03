@@ -2,7 +2,7 @@
 //  CurrentActivitySingleton.swift
 //  ProjetSwift
 //
-//  Created by Hugo LACOMBE on 01/04/2019.
+//  Created by Thibaut on 03/04/2019.
 //  Copyright © 2019 Thibaut ALLARD-SERRE. All rights reserved.
 //
 
@@ -12,8 +12,10 @@ class CurrentActivitySingleton{
     
     static let shared: CurrentActivitySingleton = CurrentActivitySingleton()
     
-    var voyage: Activity? = nil
+    var activity: Activity? = nil
+
     
     private init(){}
-
+    
 }
+

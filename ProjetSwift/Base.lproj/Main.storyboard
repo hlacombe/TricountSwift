@@ -556,6 +556,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EIN-n8-Vny">
                                                     <rect key="frame" x="302" y="7" width="57" height="30"/>
                                                     <state key="normal" title="Modifier"/>
+                                                    <connections>
+                                                        <segue destination="Tzd-WM-5v5" kind="presentation" identifier="EditActivity" id="Hnz-Qh-rOn"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -669,25 +672,35 @@
             </objects>
             <point key="canvasLocation" x="2855" y="-2021"/>
         </scene>
-        <!--View Controller-->
+        <!--Edit Activity View Controller-->
         <scene sceneID="9qD-Sw-Ikw">
             <objects>
-                <viewController id="Tzd-WM-5v5" sceneMemberID="viewController">
+                <viewController id="Tzd-WM-5v5" customClass="EditActivityViewController" customModule="ProjetSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xex-lJ-eHl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aau-8t-BaI">
-                                <rect key="frame" x="0.0" y="51" width="414" height="685"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aau-8t-BaI">
+                                <rect key="frame" x="0.0" y="56" width="414" height="680"/>
                                 <connections>
                                     <segue destination="c2M-3Q-JIM" kind="embed" id="DOY-Uq-WT7"/>
                                 </connections>
                             </containerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Modifier une dépense :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vyd-Xe-ByA">
+                                <rect key="frame" x="119" y="25" width="176" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="aau-8t-BaI" firstAttribute="leading" secondItem="Xex-lJ-eHl" secondAttribute="leading" id="DaV-Rb-oWs"/>
+                            <constraint firstItem="aau-8t-BaI" firstAttribute="centerX" secondItem="vyd-Xe-ByA" secondAttribute="centerX" id="FVB-zk-ZJa"/>
+                            <constraint firstItem="vyd-Xe-ByA" firstAttribute="centerX" secondItem="Xex-lJ-eHl" secondAttribute="centerX" id="Jp1-SS-P0l"/>
+                            <constraint firstItem="vyd-Xe-ByA" firstAttribute="top" secondItem="h1m-5l-GDA" secondAttribute="top" constant="5" id="N8d-n8-3LI"/>
                             <constraint firstItem="aau-8t-BaI" firstAttribute="bottom" secondItem="h1m-5l-GDA" secondAttribute="bottom" id="kDL-Mx-llr"/>
+                            <constraint firstItem="aau-8t-BaI" firstAttribute="top" secondItem="vyd-Xe-ByA" secondAttribute="bottom" constant="10" id="yPy-MS-sTS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="h1m-5l-GDA"/>
                     </view>
@@ -908,7 +921,7 @@
             <objects>
                 <viewController id="c2M-3Q-JIM" customClass="ActivityDetailViewController" customModule="ProjetSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g4t-fT-ilk">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="685"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="680"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Intitulé de la dépense" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k2a-WO-ViR">
@@ -930,18 +943,18 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ImageActivity" translatesAutoresizingMaskIntoConstraints="NO" id="P5j-Rg-V3l">
-                                <rect key="frame" x="115" y="474" width="253" height="140"/>
+                                <rect key="frame" x="115" y="469" width="253" height="140"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="kbn-zl-5ac"/>
                                     <constraint firstAttribute="width" constant="253" id="l7x-XT-L7S"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y2U-Mc-kvM">
-                                <rect key="frame" x="55" y="474" width="50" height="140"/>
+                                <rect key="frame" x="55" y="469" width="50" height="140"/>
                                 <state key="normal" title="Ajouter"/>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gL8-W5-gKg">
-                                <rect key="frame" x="35" y="181" width="355" height="283"/>
+                                <rect key="frame" x="35" y="181" width="355" height="278"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PersonActivityCell" id="gyy-5i-mF4" customClass="PersonActivityCell" customModule="ProjetSwift" customModuleProvider="target">
@@ -992,7 +1005,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LcY-vU-vhf">
-                                <rect key="frame" x="124" y="645" width="46" height="30"/>
+                                <rect key="frame" x="124" y="640" width="46" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="46" id="Asy-4G-FSb"/>
                                     <constraint firstAttribute="height" constant="30" id="TQX-hI-Sya"/>
@@ -1003,10 +1016,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X35-y1-zgI">
-                                <rect key="frame" x="243.66666666666663" y="645" width="47" height="30"/>
+                                <rect key="frame" x="243.66666666666663" y="640" width="47" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="7WG-LX-gAP"/>
-                                    <constraint firstAttribute="width" constant="47" id="eT1-7Y-Oj0"/>
                                 </constraints>
                                 <state key="normal" title="Valider"/>
                                 <connections>
@@ -1077,7 +1089,7 @@
                                 </constraints>
                                 <state key="normal" title="Valider"/>
                                 <connections>
-                                    <segue destination="fJW-6j-gDE" kind="unwind" unwindAction="unwindFromDetailsWithSource:" id="xJC-ob-UBY"/>
+                                    <segue destination="fJW-6j-gDE" kind="unwind" unwindAction="unwindFromPersonDetailsWithSource:" id="kap-li-42w"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BkB-mC-0Si">
@@ -1088,7 +1100,7 @@
                                 </constraints>
                                 <state key="normal" title="Retour"/>
                                 <connections>
-                                    <segue destination="fJW-6j-gDE" kind="unwind" unwindAction="unwindFromDetailsWithSource:" id="mOX-qo-IgM"/>
+                                    <segue destination="fJW-6j-gDE" kind="unwind" unwindAction="unwindFromPersonDetailsWithSource:" id="BIN-W7-eZc"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date d'arrivée dans le voyage:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L5I-eG-qRL">
@@ -1119,7 +1131,7 @@
                                     <color key="titleColor" red="1" green="0.033906882250033243" blue="0.030768054470832418" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="fJW-6j-gDE" kind="unwind" unwindAction="unwindFromDetailsWithSource:" id="xpt-4b-8V2"/>
+                                    <segue destination="fJW-6j-gDE" kind="unwind" unwindAction="unwindFromPersonDetailsWithSource:" id="1qf-bl-fJf"/>
                                 </connections>
                             </button>
                         </subviews>

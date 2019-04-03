@@ -41,8 +41,24 @@ class PersonInActivityTableController: NSObject, UITableViewDataSource, PersonsV
             } else {
                 cell.nom.text = person.firstname
             }
+            if CurrentActivitySingleton.shared.activity != nil {
+                if findDebt(person: person) != 0.0 {
+                    cell.montant.text = String(findDebt(person: person)!)
+                }
+            }
         }
         return cell
+    }
+    
+    func findDebt(person: Person) -> Double? {
+        var res = 0.0
+        let act = CurrentActivitySingleton.shared.activity
+        for dep in (act?.pdepenses?.array as? [Depense])! {
+            if dep.debiteur == person{
+                res = dep.montant
+            }
+        }
+        return res
     }
     
     func dataSetChanged() {

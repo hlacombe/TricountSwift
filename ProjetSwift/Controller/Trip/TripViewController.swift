@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class TripViewController: UIViewController, UITextFieldDelegate {
+class TripViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate {
     
     @IBOutlet weak var tripName: UITextField!
     @IBOutlet weak var tripDestination: UITextField!
@@ -24,6 +24,7 @@ class TripViewController: UIViewController, UITextFieldDelegate {
     var labeltrip: String?
     var source: UIViewController?
     var buttonText: String?
+    let imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
         if let tn = trip?.nom {
@@ -44,6 +45,7 @@ class TripViewController: UIViewController, UITextFieldDelegate {
         if let bt = buttonText {
             validerButton.setTitle(bt, for: .normal)
         }
+        imagePicker.delegate = self
     }
     
     func alert(){

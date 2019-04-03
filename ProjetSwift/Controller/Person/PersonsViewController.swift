@@ -30,7 +30,7 @@ class PersonsViewController: UIViewController {
         }
     }
 
-    @IBAction func unwindFromDetails(source: UIStoryboardSegue){
+    @IBAction func unwindFromPersonDetails(source: UIStoryboardSegue){
         tableController?.tableView.reloadData()
     }
     
@@ -82,7 +82,10 @@ class PersonsViewController: UIViewController {
     }
     
     func deletePerson(person: Person){
+        self.tableController = PersonTableController(tableView: table, current: currentVoyage!)
         tableController?.personsViewModel.delete(person: person)
         tableController?.dataSetChanged()
+        self.tableController?.personsViewModel.delegate = nil
+        self.tableController = nil
     }
 }
