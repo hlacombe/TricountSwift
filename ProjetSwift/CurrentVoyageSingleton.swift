@@ -28,6 +28,15 @@ class CurrentVoyageSingleton{
         return res
     }
     
+    func updateDebts(){
+        let debts = CurrentVoyageSingleton.shared.currentDebts
+        
+        for p in debts.keys{
+            p.solde = debts[p]!
+            CoreDataManager.save()
+        }
+    }
+    
     private init(){}
 
 }

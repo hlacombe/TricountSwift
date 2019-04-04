@@ -36,6 +36,7 @@ class NewActivityViewController: UIViewController {
             let data = img.jpegData(compressionQuality: 0.1)
             newActivity.pimg=data
         }
+        CurrentVoyageSingleton.shared.updateDebts()
         CoreDataManager.save()
     }
     

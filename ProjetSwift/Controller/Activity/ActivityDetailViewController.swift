@@ -35,6 +35,9 @@ class ActivityDetailViewController: UIViewController, UIPickerViewDataSource, UI
             self.validerBtn.setTitle("Modifier", for: .normal)
             self.intitule.text = act!.nom
             self.montant.text = String(act!.montantTotal)
+            if act!.pimg != nil {
+                self.image.image = UIImage.init(data: act!.pimg!)
+            }
         }
     }
     

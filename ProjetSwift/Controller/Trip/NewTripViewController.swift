@@ -10,7 +10,7 @@ import UIKit
 
 class NewTripViewController: UIViewController {
     
-    var image : UIImage?
+    var image : UIImage? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()

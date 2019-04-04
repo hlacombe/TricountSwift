@@ -75,16 +75,7 @@ class RemboursementTableController: NSObject, UITableViewDataSource, PersonsView
         newDepense.activite = newActivity
         
         CoreDataManager.save()
-        
-        //maj solde des personnes
-        
-        let debts = CurrentVoyageSingleton.shared.currentDebts
-        
-        for p in debts.keys{
-            p.solde = debts[p]!
-            CoreDataManager.save()
-        }
-        
+        CurrentVoyageSingleton.shared.updateDebts()
     }
 
 

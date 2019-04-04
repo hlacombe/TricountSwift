@@ -1121,7 +1121,7 @@
                         <constraints>
                             <constraint firstItem="h36-fi-vZj" firstAttribute="leading" secondItem="sJW-iy-xXA" secondAttribute="leading" constant="64" id="0Hr-EE-Egk"/>
                             <constraint firstItem="SgV-Fs-rul" firstAttribute="leading" secondItem="hoL-FF-2Km" secondAttribute="leadingMargin" constant="48" id="0og-EV-2sx"/>
-                            <constraint firstItem="sJW-iy-xXA" firstAttribute="bottom" secondItem="Z8q-rs-cvK" secondAttribute="bottom" constant="20" id="1Ij-Qh-pVL"/>
+                            <constraint firstAttribute="bottom" secondItem="Z8q-rs-cvK" secondAttribute="bottom" constant="20" id="1Ij-Qh-pVL"/>
                             <constraint firstItem="aYf-UW-gAr" firstAttribute="centerX" secondItem="hoL-FF-2Km" secondAttribute="centerX" constant="66" id="65K-XE-k1c"/>
                             <constraint firstItem="Lfg-F1-EZW" firstAttribute="leading" secondItem="2gs-c5-Rkk" secondAttribute="trailing" constant="25" id="7eg-en-laU"/>
                             <constraint firstItem="dHn-js-xVh" firstAttribute="centerX" secondItem="hoL-FF-2Km" secondAttribute="centerX" id="8cO-Xy-Jdn"/>

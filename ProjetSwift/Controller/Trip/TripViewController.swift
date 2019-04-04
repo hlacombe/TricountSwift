@@ -44,6 +44,9 @@ class TripViewController: UIViewController, UITextFieldDelegate, UINavigationCon
         if let bt = buttonText {
             validerButton.setTitle(bt, for: .normal)
         }
+        if trip?.pimg != nil {
+            image.image = UIImage.init(data: (trip?.pimg)!)
+        }
         //imagePicker.delegate = self
     }
     
@@ -91,32 +94,40 @@ class TripViewController: UIViewController, UITextFieldDelegate, UINavigationCon
     }
    
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if tripName.text != "" && tripDestination.text != "" {
-            return true
+        let btn = sender as? UIButton
+        if btn == self.validerButton {
+            if tripName.text != "" && tripDestination.text != "" {
+                return true
+            }
+            else {
+                alert()
+                return false
+            }
         }
         else {
-            alert()
-            return false
+            return true
         }
     }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if let tripName = tripName.text, let dest = tripDestination.text {
-            
-            if let sourceController = source as? NewTripViewController {
-                if image.image != UIImage(named: "image"){
-                    sourceController.image = image.image
-                }
-                sourceController.create(name: tripName, dest: dest, dateDebut: dateDebut.date, dateFin: dateFin.date)
-            }
-            else if let editTripViewController = source as? EditTripViewController {
-                if tripName != trip?.nom || dest != trip?.destination || dateFin.date != trip?.dateArrivee || dateDebut.date != trip?.dateDepart {
+        let btn = sender as? UIButton
+        if btn == self.validerButton {
+            if let tripName = tripName.text, let dest = tripDestination.text {
+                
+                if let sourceController = source as? NewTripViewController {
                     if image.image != UIImage(named: "image"){
-                        editTripViewController.image = image.image
+                        sourceController.image = image.image
                     }
-                    editTripViewController.edit(trip: trip!, name: tripName, dest: dest, dateDebut: dateDebut.date, dateFin: dateFin.date)
+                    sourceController.create(name: tripName, dest: dest, dateDebut: dateDebut.date, dateFin: dateFin.date)
+                }
+                else if let editTripViewController = source as? EditTripViewController {
+                    if tripName != trip?.nom || dest != trip?.destination || dateFin.date != trip?.dateArrivee || dateDebut.date != trip?.dateDepart || image.image != UIImage(named: "image") {
+                        if image.image != UIImage(named: "image"){
+                            editTripViewController.image = image.image
+                        }
+                        editTripViewController.edit(trip: trip!, name: tripName, dest: dest, dateDebut: dateDebut.date, dateFin: dateFin.date)
+                    }
                 }
             }
         }

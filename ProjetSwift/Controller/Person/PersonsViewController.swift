@@ -28,10 +28,7 @@ class PersonsViewController: UIViewController {
             let dateFinStr = formatter.string(from: dateFin)
             self.date.text = dateDebutStr + " - " + dateFinStr
         }
-        let debts = CurrentVoyageSingleton.shared.currentDebts
-        for p in debts.keys{
-            p.solde = debts[p]!
-        }
+        CurrentVoyageSingleton.shared.updateDebts()
         CoreDataManager.save()
     }
 
