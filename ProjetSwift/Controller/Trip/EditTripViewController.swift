@@ -11,6 +11,7 @@ import UIKit
 class EditTripViewController: UIViewController {
 
     var trip: Voyage!
+    var image : UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,10 @@ class EditTripViewController: UIViewController {
         trip.pdestination = dest
         trip.dateArrivee = dateDebut
         trip.dateDepart = dateFin
+        if let img = image {
+            let data = img.jpegData(compressionQuality: 0.1)
+            trip.pimg=data
+        }
         CoreDataManager.save()
     }
     

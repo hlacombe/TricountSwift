@@ -8,7 +8,9 @@
 
 import UIKit
 
-class EditActivityViewController: UIViewController {
+class EditActivityViewController: UIViewController, UITextFieldDelegate {
+    
+    var image : UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,8 +24,18 @@ class EditActivityViewController: UIViewController {
         for depense in (activity.pdepenses?.array as! [Depense]) {
             depense.montant = map[depense.debiteur!]!
         }
+        if let img = image {
+            let data = img.jpegData(compressionQuality: 0.1)
+            activity.pimg=data
+        }
         CoreDataManager.save()
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

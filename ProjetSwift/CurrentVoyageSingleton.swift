@@ -13,10 +13,18 @@ class CurrentVoyageSingleton{
     static let shared: CurrentVoyageSingleton = CurrentVoyageSingleton()
     
     var voyage: Voyage? = nil
+    
+    var currentDebts:Dictionary<Person, Double> {
+        return DebtCalculator().currentDebts
+    }
+    
+    var debts: Dictionary<Person, Double> {
+        return DebtCalculator().debts
+    }
+    
     func proposedDebts(person: Person) -> [proposal] {
         let dc = DebtCalculator()
         let res = dc.debtsForPerson(person: person)
-        print (dc.debts)
         return res
     }
     

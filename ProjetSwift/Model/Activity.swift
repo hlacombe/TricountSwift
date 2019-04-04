@@ -16,7 +16,7 @@ extension Activity{
     }
     
     public var montantTotal  : Double {
-        get{ return (self.pmontantTotal ?? 0.0) }
+        get{ return (self.pmontantTotal ) }
         set{ self.pmontantTotal = newValue }
     }
     

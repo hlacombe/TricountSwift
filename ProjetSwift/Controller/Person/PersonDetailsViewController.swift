@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PersonDetailsViewController: UIViewController {
+class PersonDetailsViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var firstname: UITextField!
     @IBOutlet weak var lastname: UITextField!
@@ -35,12 +35,26 @@ class PersonDetailsViewController: UIViewController {
             if let da = person.dateArrivee {
                 self.dateArrivee.date = da
             }
+            for act in (ActivityDAO.fetchAll() )! {
+                if act.pvoyage == CurrentVoyageSingleton.shared.voyage {
+                    for d in act.pdepenses?.array as! [Depense] {
+                        if d.crediteur == person || d.debiteur == person {
+                            //Verifie si la personne a des depenses associées a elle
+                            self.deleteBtn.isHidden = true
+                        }
+                    }
+                }
+            }
         }
         else {
             self.deleteBtn.isHidden = true
         }
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
     // MARK: - Navigation
 

@@ -8,13 +8,14 @@
 
 import UIKit
 
-class ActivityDetailViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class ActivityDetailViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var intitule: UITextField!
     @IBOutlet weak var crediteur: UITextField!
     @IBOutlet weak var montant: UITextField!
     @IBOutlet weak var table: UITableView!
     @IBOutlet weak var validerBtn: UIButton!
+    @IBOutlet weak var image: UIImageView!
     
     var source : UIViewController?
     var tableController: PersonInActivityTableController?
@@ -35,6 +36,31 @@ class ActivityDetailViewController: UIViewController, UIPickerViewDataSource, UI
             self.intitule.text = act!.nom
             self.montant.text = String(act!.montantTotal)
         }
+    }
+    
+    @IBAction func takePicture(_ sender: Any) {
+        let imageController = UIImagePickerController()
+        imageController.delegate = self
+        imageController.sourceType = UIImagePickerController.SourceType.camera
+        self.present(imageController, animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func selectImage(_ sender: UIButton) {
+        let imageController = UIImagePickerController()
+        imageController.delegate = self
+        imageController.sourceType = UIImagePickerController.SourceType.photoLibrary
+        self.present(imageController, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        image.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -87,6 +113,9 @@ class ActivityDetailViewController: UIViewController, UIPickerViewDataSource, UI
                         let indexPath = table.indexPath(for: cell)
                         map.updateValue(Double(cell.montant.text!) ?? 0.0, forKey: self.tableController!.personsViewModel.get(personAt: indexPath!.row)!)
                     }
+                    if image.image != UIImage(named: "imageActivity"){
+                        sourceController.image = image.image
+                    }
                     sourceController.create(nom: self.intitule.text!, crediteur: self.cred! , montantTotal: Double(self.montant!.text!)!, map: map)
                 }
                 if let sourceController = source as? EditActivityViewController {
@@ -95,6 +124,9 @@ class ActivityDetailViewController: UIViewController, UIPickerViewDataSource, UI
                     for cell in cells!{
                         let indexPath = table.indexPath(for: cell)
                         map.updateValue(Double(cell.montant.text!) ?? 0.0, forKey: self.tableController!.personsViewModel.get(personAt: indexPath!.row)!)
+                    }
+                    if image.image != UIImage(named: "imageActivity"){
+                        sourceController.image = image.image
                     }
                     sourceController.edit(activity: CurrentActivitySingleton.shared.activity!, nom: self.intitule.text!, crediteur: self.cred!, montantTotal: Double(self.montant!.text!)!, map: map)
                 }

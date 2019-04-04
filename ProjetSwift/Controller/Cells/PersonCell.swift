@@ -13,4 +13,6 @@ class PersonCell: UITableViewCell {
 
     @IBOutlet weak var Nom: UILabel!
     @IBOutlet weak var bilan: UILabel!
+    @IBOutlet weak var hidebtn: UIButton!
+    
 }

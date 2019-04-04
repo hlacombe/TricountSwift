@@ -39,22 +39,22 @@ class PersonTableController: NSObject, UITableViewDataSource, PersonsViewModelDe
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PersonCell") as! PersonCell
         if let person = personsViewModel.get(personAt: indexPath.row){
-            print(person.fullname)
-            if let l : String = person.lastname {
-                cell.Nom.text = person.firstname + " " + l
-            } else {
-                cell.Nom.text = person.firstname
+            cell.Nom.text = person.fullname
+            let solde = person.solde
+            cell.bilan.text = solde.description + "€"
+            if solde < 0 {
+                cell.bilan.textColor = #colorLiteral(red: 1, green: 0.03390688225, blue: 0.03076805447, alpha: 1)
             }
-            cell.bilan.text = person.solde.description
+            else {
+                cell.bilan.textColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+            }
             if person.isHidden {
-                cell.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-                cell.Nom.textColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
-                cell.bilan.textColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
+                cell.Nom.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.400528169)
+                cell.hidebtn.setImage(UIImage(named: "addbtn"), for: .normal)
             }
             else{
-                cell.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
                 cell.Nom.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-                cell.bilan.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+                cell.hidebtn.setImage(UIImage(named: "hidebtn"), for: .normal)
             }
         }
         return cell

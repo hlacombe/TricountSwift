@@ -34,6 +34,9 @@ class TripTableController: NSObject,UITableViewDataSource, TripViewModelDelegate
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TripCell", for: indexPath) as! TripCell
         if let trip = tripsViewModel.get(voyageAt: indexPath.row){
+            if let img = trip.pimg{
+                cell.img.image = UIImage(data: img)
+            }
             cell.nom.text = trip.nom
             cell.destination.text = trip.destination
             if let dateDebut = trip.dateArrivee,let dateFin = trip.dateDepart{

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="17G6030" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Activity" representedClassName="Activity" syncable="YES" codeGenerationType="class">
         <attribute name="pdate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="pimg" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="pmontantTotal" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="pnom" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="pdepenses" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Depense" inverseName="psourceActivity" inverseEntity="Depense" syncable="YES"/>
@@ -30,15 +31,16 @@
         <attribute name="pdateArrive" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="pdateDepart" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="pdestination" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pimage" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="pimg" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="pnom" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="activites" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="pvoyage" inverseEntity="Activity" syncable="YES"/>
         <relationship name="newRelationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Person" inverseName="voyage" inverseEntity="Person" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Activity" positionX="6.47265625" positionY="121.71875" width="128" height="120"/>
+        <element name="Activity" positionX="6.47265625" positionY="121.71875" width="128" height="135"/>
         <element name="Depense" positionX="-88.07421875" positionY="-219.2890625" width="128" height="105"/>
         <element name="Person" positionX="-309.47265625" positionY="-297.40625" width="128" height="210"/>
-        <element name="Voyage" positionX="-411.11328125" positionY="-1.52734375" width="128" height="150"/>
+        <element name="Voyage" positionX="-411.11328125" positionY="-1.52734375" width="128" height="165"/>
     </elements>
 </model>

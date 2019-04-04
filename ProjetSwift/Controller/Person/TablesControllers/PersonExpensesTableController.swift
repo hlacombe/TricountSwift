@@ -36,7 +36,7 @@ class PersonExpensesTableController: NSObject, UITableViewDataSource, PersonsVie
         let cell = tableView.dequeueReusableCell(withIdentifier: "ExpensePersonCell") as! ExpensePersonCell
         if let dep = personsViewModel.get(depenseAt: indexPath.row){
                 cell.LabelActivity.text = dep.activite?.nom
-                cell.Montant.text = String(dep.montant)
+                cell.Montant.text = String(dep.montant) + "€"
         }
         return cell
     }

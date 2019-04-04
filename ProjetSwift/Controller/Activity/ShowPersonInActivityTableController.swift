@@ -1,22 +1,20 @@
 //
-//  PersonInActivityTableViewController.swift
+//  ShowPersonInActivityTableControllerTableViewController.swift
 //  ProjetSwift
 //
-//  Created by Thibaut on 02/04/2019.
+//  Created by Thibaut on 03/04/2019.
 //  Copyright © 2019 Thibaut ALLARD-SERRE. All rights reserved.
 //
 
 import UIKit
 
-class PersonInActivityTableController: NSObject, UITableViewDataSource, PersonsViewModelDelegate {
+class ShowPersonInActivityTableController: NSObject, UITableViewDataSource, PersonsViewModelDelegate {
 
-    let currentVoyage: Voyage?
     var tableView   : UITableView
     var personsViewModel : PersonViewModel
     let fetchResultController : PersonFetchResultController
     
     init(tableView: UITableView) {
-        self.currentVoyage = CurrentVoyageSingleton.shared.voyage!
         self.tableView        = tableView
         self.fetchResultController = PersonFetchResultController(view : tableView)
         self.personsViewModel = PersonViewModel(data: self.fetchResultController.personsFetched)
@@ -40,6 +38,7 @@ class PersonInActivityTableController: NSObject, UITableViewDataSource, PersonsV
             if CurrentActivitySingleton.shared.activity != nil {
                 if findDebt(person: person) != 0.0 {
                     cell.montant.text = String(findDebt(person: person)!)
+                    cell.backgroundColor = #colorLiteral(red: 0.4204992656, green: 0.7878243822, blue: 0.9715430699, alpha: 1)
                 }
             }
         }
@@ -76,5 +75,5 @@ class PersonInActivityTableController: NSObject, UITableViewDataSource, PersonsV
     func personHidden(at indexPath: IndexPath) {
         self.tableView.selectRow(at: indexPath, animated: true, scrollPosition: UITableView.ScrollPosition.middle)
     }
-
+    
 }

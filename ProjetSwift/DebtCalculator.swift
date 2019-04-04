@@ -28,7 +28,10 @@ class DebtCalculator{
     var proposedRefunds: [proposal]
     var participants: [Person]?
     
+    var currentDebts: Dictionary<Person, Double>
+    
     init(){
+        self.currentDebts = Dictionary<Person, Double>()
         self.proposedRefunds = [proposal]()
         let voyage: Voyage = CurrentVoyageSingleton.shared.voyage!
         self.depenses = DepenseDAO.fetchDepenseForVoyage(forVoyage: voyage)
@@ -37,13 +40,18 @@ class DebtCalculator{
         generateDebts()
     }
     
+    func getCurrentDebts(){
+        for p in participants!{
+            debts[p] = balanceForPerson(for: p)
+            currentDebts[p] = balanceForPerson(for: p)
+        }
+    }
+    
     func generateDebts(){
         guard participants != nil else {
             return
         }
-        for p in participants!{
-            debts[p] = balanceForPerson(for: p)
-        }
+        self.getCurrentDebts()
         while isSomeoneInDebt(){
             if let c = getTopCreditor(),let d = getTopDebitor(){
                 self.proposeRefund(creditor: c, debitor: d)
@@ -105,4 +113,5 @@ class DebtCalculator{
     }
     
 }
+
 

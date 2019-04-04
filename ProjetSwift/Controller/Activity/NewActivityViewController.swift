@@ -10,6 +10,8 @@ import UIKit
 
 class NewActivityViewController: UIViewController {
 
+    var image: UIImage?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,8 +32,18 @@ class NewActivityViewController: UIViewController {
             newDepense.montant = map[person]!
             newDepense.activite = newActivity
         }
+        if let img = image {
+            let data = img.jpegData(compressionQuality: 0.1)
+            newActivity.pimg=data
+        }
         CoreDataManager.save()
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

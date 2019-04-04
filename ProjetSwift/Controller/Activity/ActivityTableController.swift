@@ -35,7 +35,7 @@ class ActivityTableController: NSObject, UITableViewDataSource, ActivityViewMode
         let cell = tableView.dequeueReusableCell(withIdentifier: "ActivityCell", for: indexPath) as! ActivityCell
         let activity = self.activityViewModel.get(activityAt: indexPath.row)
         cell.intitule.text = activity!.nom
-        cell.montant.text = String(activity!.montantTotal)
+        cell.montant.text = String(activity!.montantTotal) + "€"
         return cell
     }
     

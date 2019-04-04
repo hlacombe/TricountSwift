@@ -9,11 +9,10 @@
 import Foundation
 import UIKit
 
-class TripViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate {
+class TripViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     @IBOutlet weak var tripName: UITextField!
     @IBOutlet weak var tripDestination: UITextField!
-    @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var dateDebut: UIDatePicker!
     @IBOutlet weak var dateFin: UIDatePicker!
@@ -48,6 +47,31 @@ class TripViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         //imagePicker.delegate = self
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    @IBAction func takePicture(_ sender: Any) {
+        let imageController = UIImagePickerController()
+        imageController.delegate = self
+        imageController.sourceType = UIImagePickerController.SourceType.camera
+        self.present(imageController, animated: true, completion: nil)
+    }
+    
+    @IBAction func selectImage(_ sender: UIButton) {
+        let imageController = UIImagePickerController()
+        imageController.delegate = self
+        imageController.sourceType = UIImagePickerController.SourceType.photoLibrary
+        self.present(imageController, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        image.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
     func alert(){
         let alert = UIAlertController(title: "Voyage invalide", message: "Votre voyage doit avoir un nom et une destination", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action) -> Void in return } ))
@@ -80,12 +104,18 @@ class TripViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if let tripName = tripName.text, let dest = tripDestination.text {
+            
             if let sourceController = source as? NewTripViewController {
+                if image.image != UIImage(named: "image"){
+                    sourceController.image = image.image
+                }
                 sourceController.create(name: tripName, dest: dest, dateDebut: dateDebut.date, dateFin: dateFin.date)
-                
             }
             else if let editTripViewController = source as? EditTripViewController {
                 if tripName != trip?.nom || dest != trip?.destination || dateFin.date != trip?.dateArrivee || dateDebut.date != trip?.dateDepart {
+                    if image.image != UIImage(named: "image"){
+                        editTripViewController.image = image.image
+                    }
                     editTripViewController.edit(trip: trip!, name: tripName, dest: dest, dateDebut: dateDebut.date, dateFin: dateFin.date)
                 }
             }

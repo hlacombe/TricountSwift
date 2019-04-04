@@ -20,7 +20,8 @@ extension Person {
         set{ plastname = newValue }
     }
     public var solde : Double {
-        return 0.0
+        get{ return self.psolde }
+        set{ psolde = newValue }
     }
     
     public var fullname: String {
@@ -31,7 +32,7 @@ extension Person {
             return self.firstname
         }
     }
-
+    
     public var dateArrivee: Date? {
         get{ return self.pdateArrivee}
         set{ pdateArrivee = newValue }

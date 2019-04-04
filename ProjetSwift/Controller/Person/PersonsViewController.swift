@@ -28,6 +28,11 @@ class PersonsViewController: UIViewController {
             let dateFinStr = formatter.string(from: dateFin)
             self.date.text = dateDebutStr + " - " + dateFinStr
         }
+        let debts = CurrentVoyageSingleton.shared.currentDebts
+        for p in debts.keys{
+            p.solde = debts[p]!
+        }
+        CoreDataManager.save()
     }
 
     @IBAction func unwindFromPersonDetails(source: UIStoryboardSegue){
@@ -42,6 +47,7 @@ class PersonsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.tableController = PersonTableController(tableView: table, current: currentVoyage!)
     }
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "EditPerson"{
@@ -70,9 +76,12 @@ class PersonsViewController: UIViewController {
                         if let person = tableController?.personsViewModel.get(personAt: self.table.indexPath(for: cell)!.row) {
                             if person.isHidden {
                                 person.isHidden = false
+                                person.pdateDepart = nil
                             }
                             else {
                                 person.isHidden = true
+                                let date = Date()
+                                person.pdateDepart = date
                             }
                         }
                     }

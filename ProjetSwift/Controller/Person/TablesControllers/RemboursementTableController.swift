@@ -25,14 +25,13 @@ class RemboursementTableController: NSObject, UITableViewDataSource, PersonsView
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let p = CurrentVoyageSingleton.shared.proposedDebts(person: CurrentPersonSingleton.shared.person!)
-        print(p)
         return p.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "RemboursementCell") as! RemboursementCell
         let dep = CurrentVoyageSingleton.shared.proposedDebts(person: CurrentPersonSingleton.shared.person!)[indexPath.row]
-        cell.personne.text = "Remboursement"
+        cell.personne.text = dep.creditor.fullname
         cell.montant.text = String(dep.montant)
         return cell
     }
@@ -56,5 +55,37 @@ class RemboursementTableController: NSObject, UITableViewDataSource, PersonsView
     func personHidden(at indexPath: IndexPath) {
         self.tableView.selectRow(at: indexPath, animated: true, scrollPosition: UITableView.ScrollPosition.middle)
     }
+    
+    func refund(index: Int){
+        let dep = CurrentVoyageSingleton.shared.proposedDebts(person: CurrentPersonSingleton.shared.person!)[index]
+        let creditor = dep.debitor
+        let debitor = dep.creditor
+        let montant = dep.montant
+        
+        let newActivity = Activity(context: CoreDataManager.context)
+        newActivity.nom = "Remboursement de " + creditor.fullname + " à " + debitor.fullname
+        newActivity.montantTotal = montant
+        newActivity.pvoyage = CurrentVoyageSingleton.shared.voyage
+        CurrentVoyageSingleton.shared.voyage?.addToActivites(newActivity)
+        
+        let newDepense = Depense(context: CoreDataManager.context)
+        newDepense.crediteur = creditor
+        newDepense.debiteur = debitor
+        newDepense.montant = montant
+        newDepense.activite = newActivity
+        
+        CoreDataManager.save()
+        
+        //maj solde des personnes
+        
+        let debts = CurrentVoyageSingleton.shared.currentDebts
+        
+        for p in debts.keys{
+            p.solde = debts[p]!
+            CoreDataManager.save()
+        }
+        
+    }
+
 
 }

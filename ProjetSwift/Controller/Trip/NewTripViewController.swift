@@ -10,6 +10,8 @@ import UIKit
 
 class NewTripViewController: UIViewController {
     
+    var image : UIImage?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
                 // Do any additional setup after loading the view.
@@ -21,6 +23,10 @@ class NewTripViewController: UIViewController {
         newVoyage.pdestination = dest
         newVoyage.dateArrivee = dateDebut
         newVoyage.dateDepart = dateFin
+        if let img = image {
+            let data = img.jpegData(compressionQuality: 0.1)
+            newVoyage.pimg=data
+        }
         CoreDataManager.save()
     }
     

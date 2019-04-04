@@ -35,18 +35,6 @@ class ActivityDAO: NSObject {
         }
         catch let error as NSError{
             fatalError(error.description)
-        } }
-    
-    /*
-    static func search(forFirstname firstname: String, lastname: String) -> [Person]?{
-        self.request.predicate = NSPredicate(format: "firstname == %@ AND lastname == %@", firstname, lastname)
-        do{
-            return try CoreDataManager.context.fetch(request) as [Person]
         }
-        catch{
-            return nil
-        } }
- */
-    
-
+    }
 }
