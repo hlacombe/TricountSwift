@@ -38,6 +38,55 @@ class ActivityDetailViewController: UIViewController, UIPickerViewDataSource, UI
         }
     }
     
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == intitule || textField == crediteur || textField == montant {
+            if textField.text == "" {
+                textField.backgroundColor = #colorLiteral(red: 0.9426003886, green: 0.1370869242, blue: 0.0439281667, alpha: 0.5125990317)
+                textField.placeholder = textField.placeholder! + " - Champ requis"
+            }
+            else {
+                textField.backgroundColor = #colorLiteral(red: 0.2599510105, green: 0.9793555699, blue: 0.0942075538, alpha: 0.5)
+            }
+        }
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        let btn = sender as? UIButton
+        if btn == self.validerBtn {
+            if intitule.text != "" && crediteur.text != "" && montant.text != ""{
+                var map: Dictionary<Person, Double> = Dictionary<Person, Double>()
+                let cells = self.table.visibleCells as? [PersonActivityCell]
+                for cell in cells!{
+                    let indexPath = table.indexPath(for: cell)
+                    map.updateValue(Double(cell.montant.text!) ?? 0.0, forKey: self.tableController!.personsViewModel.get(personAt: indexPath!.row)!)
+                }
+                var som : Double = 0.0
+                for m in map {
+                    som = m.value + som
+                }
+                if som == Double(self.montant!.text!) {
+                    return true
+                }
+                else {
+                    alert()
+                    return false
+                }
+            }
+            else {
+                return false
+            }
+        }
+        else {
+            return true
+        }
+    }
+    
+    func alert(){
+        let alert = UIAlertController(title: "Montant total invalide", message: "Le montant total est mal reparti !", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action) -> Void in return } ))
+        self.present(alert, animated: false)
+    }
+    
     @IBAction func takePicture(_ sender: Any) {
         let imageController = UIImagePickerController()
         imageController.delegate = self

@@ -40,7 +40,8 @@ class PersonDetailsViewController: UIViewController, UITextFieldDelegate {
                     for d in act.pdepenses?.array as! [Depense] {
                         if d.crediteur == person || d.debiteur == person {
                             //Verifie si la personne a des depenses associées a elle
-                            self.deleteBtn.isHidden = true
+                            self.deleteBtn.isEnabled = false
+                            self.deleteBtn.setTitleColor(#colorLiteral(red: 1, green: 0.03390688225, blue: 0.03076805447, alpha: 0.3860860475), for: .normal)
                         }
                     }
                 }

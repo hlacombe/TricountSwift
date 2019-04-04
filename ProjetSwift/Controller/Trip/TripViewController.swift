@@ -81,11 +81,11 @@ class TripViewController: UIViewController, UITextFieldDelegate, UINavigationCon
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField == tripName || textField == tripDestination {
             if textField.text == "" {
-                textField.backgroundColor = #colorLiteral(red: 0.9426003886, green: 0.1370869242, blue: 0.0439281667, alpha: 0.7642220511)
+                textField.backgroundColor = #colorLiteral(red: 0.9426003886, green: 0.1370869242, blue: 0.0439281667, alpha: 0.5125990317)
                 textField.placeholder = textField.placeholder! + " - Champ requis"
             }
             else {
-                textField.backgroundColor = #colorLiteral(red: 0.2599510105, green: 0.9793555699, blue: 0.0942075538, alpha: 0.7642220511)
+                textField.backgroundColor = #colorLiteral(red: 0.2599510105, green: 0.9793555699, blue: 0.0942075538, alpha: 0.5)
             }
         }
     }
