@@ -57,6 +57,40 @@ class PersonDetailsViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == firstname {
+            if textField.text == "" {
+                textField.backgroundColor = #colorLiteral(red: 0.9426003886, green: 0.1370869242, blue: 0.0439281667, alpha: 0.5125990317)
+                textField.placeholder = textField.placeholder! + " - Champ requis"
+            }
+            else {
+                textField.backgroundColor = #colorLiteral(red: 0.2599510105, green: 0.9793555699, blue: 0.0942075538, alpha: 0.5)
+            }
+        }
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        let btn = sender as? UIButton
+        if btn == self.validerBtn {
+            if firstname.text != "" {
+                return true
+            }
+            else {
+                alert()
+                return false
+            }
+        }
+        else {
+            return true
+        }
+    }
+    
+    func alert(){
+        let alert = UIAlertController(title: "Personne invalide", message: "Veuillez remplir un prénom", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action) -> Void in return } ))
+        self.present(alert, animated: false)
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
