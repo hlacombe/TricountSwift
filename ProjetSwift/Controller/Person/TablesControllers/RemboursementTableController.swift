@@ -56,11 +56,11 @@ class RemboursementTableController: NSObject, UITableViewDataSource, PersonsView
         self.tableView.selectRow(at: indexPath, animated: true, scrollPosition: UITableView.ScrollPosition.middle)
     }
     
-    func refund(index: Int){
+    func refund(index: Int, montant: Double){
         let dep = CurrentVoyageSingleton.shared.proposedDebts(person: CurrentPersonSingleton.shared.person!)[index]
         let creditor = dep.debitor
         let debitor = dep.creditor
-        let montant = dep.montant
+        let montant = montant
         
         let newActivity = Activity(context: CoreDataManager.context)
         newActivity.nom = "Remboursement de " + creditor.fullname + " à " + debitor.fullname

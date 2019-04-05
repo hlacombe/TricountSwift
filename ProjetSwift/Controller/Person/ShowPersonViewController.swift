@@ -49,7 +49,7 @@ class ShowPersonViewController: UIViewController, UITextFieldDelegate {
         if let btn = sender as? UIButton{
             if let contentView = btn.superview{
                 if let cell = contentView.superview as? RemboursementCell {
-                    self.tableRemboursementController!.refund(index: self.tabBilan.indexPath(for: cell)!.row)
+                    self.tableRemboursementController!.refund(index: self.tabBilan.indexPath(for: cell)!.row, montant: Double(cell.montant!.text!)!)
                 }
                 self.tabBilan.reloadData()
             }
