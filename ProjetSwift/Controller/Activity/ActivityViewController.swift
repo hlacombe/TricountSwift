@@ -75,6 +75,7 @@ class ActivityViewController: UIViewController {
                 }
             }
         }
+        CurrentVoyageSingleton.shared.updateDebts()
     }
     
     

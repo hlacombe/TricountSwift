@@ -32,10 +32,10 @@ class TripViewController: UIViewController, UITextFieldDelegate, UINavigationCon
         if let td = trip?.destination {
             tripDestination.text = td
         }
-        if let dd = trip?.dateDepart {
+        if let dd = trip?.dateArrivee {
             dateDebut.date = dd
         }
-        if let df = trip?.dateArrivee {
+        if let df = trip?.dateDepart {
             dateFin.date = df
         }
         if let lt = labeltrip {

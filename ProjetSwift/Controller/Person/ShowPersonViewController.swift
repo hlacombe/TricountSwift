@@ -21,7 +21,7 @@ class ShowPersonViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableRemboursementController = RemboursementTableController(tableView: tabBilan)
+         self.tableRemboursementController = RemboursementTableController(tableView: tabBilan)
         self.person = CurrentPersonSingleton.shared.person
         // Do any additional setup after loading the view.
         self.fullname.text = person.fullname

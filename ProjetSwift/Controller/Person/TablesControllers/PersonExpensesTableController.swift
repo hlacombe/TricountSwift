@@ -37,6 +37,13 @@ class PersonExpensesTableController: NSObject, UITableViewDataSource, PersonsVie
         if let dep = personsViewModel.get(depenseAt: indexPath.row){
                 cell.LabelActivity.text = dep.activite?.nom
                 cell.Montant.text = String(dep.montant) + "€"
+            if dep.crediteur != CurrentPersonSingleton.shared.person {
+                cell.Montant.textColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+            }
+            else {
+                cell.Montant.text = "-" + cell.Montant.text!
+                cell.Montant.textColor = #colorLiteral(red: 1, green: 0.03390688225, blue: 0.03076805447, alpha: 1)
+            }
         }
         return cell
     }
